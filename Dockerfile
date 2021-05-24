@@ -1,6 +1,6 @@
 FROM php:5.5-apache
 
-RUN apt-get update && apt-get install -y rsync libbz2-dev libfreetype6-dev libjpeg62-turbo-dev \
+RUN apt-get update && apt-get install -–no-install-recommends -y rsync libbz2-dev libfreetype6-dev libjpeg62-turbo-dev \
         libpng-dev libc-client-dev libkrb5-dev libicu-dev libmcrypt-dev  libxml++2.6-dev \
         libxslt-dev libgeoip-dev wget subversion vim less \
     && rm -rf /var/lib/apt/lists/*
