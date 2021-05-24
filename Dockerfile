@@ -1,7 +1,7 @@
 FROM php:5.5-apache
 
-RUN apt-get update && apt-get install -–no-install-recommends -y rsync libbz2-dev libfreetype6-dev libjpeg62-turbo-dev \
-        libpng-dev libc-client-dev libkrb5-dev libicu-dev libmcrypt-dev  libxml++2.6-dev \
+RUN apt-get update && apt-get install -y rsync libbz2-dev libfreetype6-dev libjpeg62-turbo-dev \
+        libpng-dev libc-client-dev libkrb5-dev libicu-dev libmcrypt-dev libxml++2.6-dev \
         libxslt-dev libgeoip-dev wget subversion vim less \
     && rm -rf /var/lib/apt/lists/*
 
@@ -21,7 +21,7 @@ RUN echo	"[PHP]\n"\
          	"display_errors = off\n"\
          	"display_startup_errors = off\n"\
          	"error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT\n"\
-		    "\n"\
-		    "[Date]\n"\
-		    "date.timezone = Europe/Prague\n"\
-            "\n" > /usr/local/etc/php/php.ini
+		"\n"\
+		"[Date]\n"\
+		"date.timezone = Europe/Prague\n"\
+		"\n" > /usr/local/etc/php/php.ini
